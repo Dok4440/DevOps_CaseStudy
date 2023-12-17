@@ -1,0 +1,21 @@
+﻿@using Contentful.Core.Models
+
+@model ContentfulCollection<LinuxDistro>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @foreach (var distro in Model)
+    {
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start; padding: 20px;">
+            <h2>@distro.name</h2>
+            <p>Release date: @distro.releaseDate</p>
+            <p>Creator: @distro.creator</p>
+            <p>@distro.description</p>
+            <img src="@distro.logo.File.Url" alt="@distro.logo.Title" width="200" />
+        </div>
+        <hr />
+    }
+</div>
