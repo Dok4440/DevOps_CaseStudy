@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:3.1
 
 WORKDIR /app
 
-COPY --from=build /app/publish .
+COPY /app/build .
 
 EXPOSE 80
 
